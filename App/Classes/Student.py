@@ -17,3 +17,13 @@ class Student:
             f"Major: {self.Major if self.Major else 'N/A'}\n"
             f"Courses Enrolled: {', '.join(self.CourseList) if self.CourseList else 'None'}"
         )
+
+    def Dictator(self):
+        return {
+            "SBUID": self.SBUID,
+            "Year": self.Year,
+            "Degree": self.Degree,
+            "Faculty": self.Faculty,
+            "Major": self.Major,
+            "CourseList": self.CourseList
+        }
