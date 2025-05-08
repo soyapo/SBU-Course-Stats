@@ -11,7 +11,7 @@ from Classes.DataRequest import DataRequest
 degree = 2 # 2 for bachelor
 faculty = 22 # 22 for Maths, replace with your desired faculty code 
 
-IdStrings = [f"{i:03}" for i in range(221, 240)] # includes all strings from 001 to 220 for student IDs. the maximum yet seen irl is 221.
+IdStrings = [f"{i:03}" for i in range(1, 240)] # includes all strings from 001 to 220 for student IDs. the maximum yet seen irl is 221.
 
 for year in range(403, 404): # modify to your desired entry years
     for id in IdStrings:
@@ -26,17 +26,17 @@ for year in range(403, 404): # modify to your desired entry years
 
         exists = 0
         CourseList = []
-        ListItems = soup.find_all("li", class_="list-group-item")
+        ListItems = soup.find_all("li", class_= "list-group-item")
 
         for item in ListItems:
             aTag = item.find("a")
             if aTag:
                 exists = 1        
-                CourseList.append(aTag.get_text(strip=True)[:-16]) # Removing course codes from the end of the string
+                CourseList.append(aTag.get_text(strip = True)[:-16]) # Removing course codes from the end of the string
 
         # creating an Student instance with the scraped data in case of existance
         if exists:
             student = Student(SBUID, year, degree, faculty, "", CourseList)
             ModifyJSON(student.Dictator())
         
-        sleep(0.05)
+        # sleep(0.05)
