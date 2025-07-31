@@ -1,4 +1,4 @@
 /.vscode
-/App/__pycache__
-/App/Classes/__pycache__
-/App/Scripts/__pycache__
+/__pycache__
+/Classes/__pycache__
+/Scripts/__pycache__
