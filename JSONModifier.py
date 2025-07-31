@@ -2,7 +2,7 @@ import os
 import json
 from Classes.Student import Student
 
-DATA_PATH = os.getcwd() + "\\App\\Data\\data.json"
+DATA_PATH = os.getcwd() + "\\Data\\data.json"
 
 def ModifyJSON(student):
     # Load existing data
