@@ -1,5 +1,5 @@
+# Student data scheme to be used for scraping and analyzing data
 class Student:
-
     def __init__(self, SBUID, Year, Degree, Faculty, Major, CourseList=None):
         self.SBUID = SBUID
         self.Year = Year
@@ -17,7 +17,8 @@ class Student:
             f"Major: {self.Major if self.Major else 'N/A'}\n"
             f"Courses Enrolled: {', '.join(self.CourseList) if self.CourseList else 'None'}"
         )
-
+    
+    # Convert the student instance into a dictionary
     def Dictator(self):
         return {
             "SBUID": self.SBUID,
