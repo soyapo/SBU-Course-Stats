@@ -35,7 +35,7 @@ for year in range(400, 403): # modify to your desired entry years
                 CourseList.append(aTag.get_text(strip = True)[:-16]) # Removing course codes from the end of the string
 
         # creating an Student instance with the scraped data in case of course existance
-        if exists:
+        if exists:  
             student = Student(SBUID, year, degree, faculty, "", CourseList)
             ModifyJSON(student.Dictator())
 
