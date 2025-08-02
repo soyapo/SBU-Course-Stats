@@ -671,7 +671,7 @@ def generate_html_dashboard(data_path="data\\data.json", output_path="index.html
                 checkbox.id = `year_${{year}}`;
                 checkbox.value = year;
                 // Default to checking the last year (index 5 in your original code)
-                if (index === Math.min(5, allYears.length - 1)) checkbox.checked = true;
+                if (index === 3) checkbox.checked = true;
                 checkbox.addEventListener('change', updateChart);
 
                 const label = document.createElement('label');
@@ -933,8 +933,7 @@ def generate_html_dashboard(data_path="data\\data.json", output_path="index.html
 
             // Set default selections (matching original Bokeh defaults)
             if (allYears.length > 0) {{
-                const defaultYearIndex = Math.min(5, allYears.length - 1);
-                const defaultYearCheckbox = document.getElementById(`year_${{allYears[defaultYearIndex]}}`);
+                const defaultYearCheckbox = document.getElementById(`year_403`);
                 if (defaultYearCheckbox) defaultYearCheckbox.checked = true;
             }}
 

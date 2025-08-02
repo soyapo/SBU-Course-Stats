@@ -11677,7 +11677,7 @@
                 checkbox.id = `year_${year}`;
                 checkbox.value = year;
                 // Default to checking the last year (index 5 in your original code)
-                if (index === Math.min(5, allYears.length - 1)) checkbox.checked = true;
+                if (index === 3) checkbox.checked = true;
                 checkbox.addEventListener('change', updateChart);
 
                 const label = document.createElement('label');
@@ -11939,8 +11939,7 @@
 
             // Set default selections (matching original Bokeh defaults)
             if (allYears.length > 0) {
-                const defaultYearIndex = Math.min(5, allYears.length - 1);
-                const defaultYearCheckbox = document.getElementById(`year_${allYears[defaultYearIndex]}`);
+                const defaultYearCheckbox = document.getElementById(`year_403`);
                 if (defaultYearCheckbox) defaultYearCheckbox.checked = true;
             }
 
