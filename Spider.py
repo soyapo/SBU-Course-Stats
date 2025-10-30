@@ -7,14 +7,17 @@ from Classes.DataRequest import DataRequest
 
 
 # Base Info
-degree = 2 # 2 for bachelor, 4 for masters, 5 for PhD
+degree = 5 # 2 for bachelor, 4 for masters, 5 for PhD
 faculty = 22 # 22 for Maths, replace with your desired faculty code 
 
-IdStrings = [f"{i:03}" for i in range(1, 241)] # includes all strings from 001 to 240 for student IDs. the maximum yet seen irl is 221.
+IdStrings = [f"{i:03}" for i in range(1, 40)] # includes all strings from 001 to 240 for student IDs. the maximum yet seen irl is 221.
 
-for year in range(400, 403): # modify to your desired entry years
+for year in range(400, 401): # modify to your desired entry years
     for id in IdStrings:
         # tinkering the SBU ID
+        if year < 400:
+            year = year % 100
+
         SBUID = str(year) + str(degree) + str(faculty) + id 
 
         # Making a POST request and saving the result in ResponseHTML
@@ -31,8 +34,12 @@ for year in range(400, 403): # modify to your desired entry years
         for item in ListItems:
             aTag = item.find("a")
             if aTag:
-                exists = 1        
-                CourseList.append(aTag.get_text(strip = True)[:-16]) # Removing course codes from the end of the string
+                exists = 1
+                text = aTag.get_text(strip=True)
+                i = text.find('(')
+                result = text[:i].strip() if i != -1 else text
+
+                CourseList.append(result) # Removing course codes from the end of the string
 
         # creating an Student instance with the scraped data in case of course existance
         if exists:  
