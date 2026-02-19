@@ -10,9 +10,9 @@ from Classes.DataRequest import DataRequest
 degree = 5 # 2 for bachelor, 4 for masters, 5 for PhD
 faculty = 22 # 22 for Maths, replace with your desired faculty code 
 
-IdStrings = [f"{i:03}" for i in range(1, 40)] # includes all strings from 001 to 240 for student IDs. the maximum yet seen irl is 221.
+IdStrings = [f"{i:03}" for i in range(1, 50)] # includes all strings from 001 to 240 for student IDs. the maximum yet seen irl is 221.
 
-for year in range(400, 401): # modify to your desired entry years
+for year in range(398, 405): # modify to your desired entry years
     for id in IdStrings:
         # tinkering the SBU ID
         if year < 400:

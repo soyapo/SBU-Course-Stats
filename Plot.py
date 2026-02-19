@@ -30,7 +30,7 @@ AllYears = sorted(df["Year"].unique())
 AllDegrees = sorted(df["Degree"].unique())
 
 # Set up checkbox widget
-YearBox = CheckboxGroup(labels=[str(y) for y in AllYears], active=[5])
+YearBox = CheckboxGroup(labels=[str(y) for y in AllYears], active=[0])
 DegreeBox = CheckboxGroup(labels=["کارشناسی", "ارشد", "دکتری"], active=[0])
 
 # Function to get course counts for selected years and degrees
