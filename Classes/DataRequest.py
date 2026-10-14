@@ -11,9 +11,10 @@ class DataRequest:
             "username": SBUID
         }
     
+    # returns None on a network error so the caller can skip this ID
     def request(self):
         try:
-            response = requests.post(url=self.url, data=self.data)
-        except:
-            return 0
+            response = requests.post(url=self.url, data=self.data, timeout=30)
+        except requests.RequestException:
+            return None
         return response

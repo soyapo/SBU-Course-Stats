@@ -3,7 +3,7 @@ import json
 import pandas as pd
 
 
-def generate_html_dashboard(data_path="data\\data.json", output_path="index.html"):
+def generate_html_dashboard(data_path="data/canonical/22-4051.canonical.json", output_path="index.html"):
 
     # Load data from JSON
     try:
@@ -974,7 +974,7 @@ def generate_html_dashboard(data_path="data\\data.json", output_path="index.html
 
 
 if __name__ == "__main__":
-    DATA_PATH = os.getcwd() + "\\Data\\data.json"
+    DATA_PATH = os.getcwd() + "/data/canonical/22-4051.canonical.json"
     OUTPUT_PATH = "index.html"
 
     print("Generating HTML dashboard...")

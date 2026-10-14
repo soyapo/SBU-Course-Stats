@@ -9,7 +9,7 @@ from bokeh.plotting import figure, curdoc
 from bokeh.models import ColumnDataSource, CheckboxGroup, HoverTool
 
 
-DATA_PATH = os.getcwd() + "\\Data\\data.json"
+DATA_PATH = os.getcwd() + "/data/canonical/22-4051.canonical.json"
 
 # Load data from JSON
 with open(DATA_PATH, 'r', encoding='utf-8') as f:
